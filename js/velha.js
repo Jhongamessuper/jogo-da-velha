@@ -2,13 +2,17 @@
 (()=>{
 
     // Declarando variáveis e objetos utilizados para o jogo.
-    const TEXTO_USUARIO_X = 'Usuário X:  ';
+
+    //Variáveis constantes (Não podem ser mudadas depois no durante o código)
+    const TEXTO_USUARIO_X = 'Usuário X:  '; 
     const TEXTO_USUARIO_O = 'Usuário O:  ';
 
     let jogadorAtual = {};
     let jogadas = [];
     let emJogo = false;
     let jogo = {
+
+        //
         jogada1: document.querySelector('.jogo-velha-1'),
         jogada2: document.querySelector('.jogo-velha-2'),
         jogada3: document.querySelector('.jogo-velha-3'),
@@ -32,44 +36,46 @@
         pontos: 0
     }
 
-    var opcoes = {
-        divOpcoesJogo : document.querySelector('.opcoes-jogo'),
-        usuarioX : document.getElementById('usuario-x'),
-        usuarioO : document.getElementById('usuario-o'),
-        btnJogar : document.getElementById('btn-jogar')
+    //Variável opções que contém:
+    var opcoes = { 
+        divOpcoesJogo : document.querySelector('.opcoes-jogo'), //
+        usuarioX : document.getElementById('usuario-x'), //
+        usuarioO : document.getElementById('usuario-o'), //
+        btnJogar : document.getElementById('btn-jogar') //
     };
 
+    //Variável painel que contém:
     var painel = {
-        painelOpcoesJogo : document.querySelector('.painel-opcoes'),
-        nomeX : document.getElementById('painel-usuario-x-nome'),
-        nomeO : document.getElementById('painel-usuario-o-nome'),
-        pontosX : document.getElementById('painel-usuario-x-pontos'),
-        pontosO : document.getElementById('painel-usuario-o-pontos'),
-        nomeProximoJogador: document.getElementById('proximo-jogador')
+        painelOpcoesJogo : document.querySelector('.painel-opcoes'), //
+        nomeX : document.getElementById('painel-usuario-x-nome'), //
+        nomeO : document.getElementById('painel-usuario-o-nome'), //
+        pontosX : document.getElementById('painel-usuario-x-pontos'), //
+        pontosO : document.getElementById('painel-usuario-o-pontos'), //
+        nomeProximoJogador: document.getElementById('proximo-jogador') //
     };
 
     // Capturando os eventos de click
-    opcoes.btnJogar.addEventListener('click', () => {
+    opcoes.btnJogar.addEventListener('click', () => { //
 
-        jogadorX.nome = opcoes.usuarioX.value;
-        jogadorO.nome = opcoes.usuarioO.value;
+        jogadorX.nome = opcoes.usuarioX.value; //
+        jogadorO.nome = opcoes.usuarioO.value; //
 
-        if(!jogadorX.nome || !jogadorO.nome){
-            alert('Favor informar os usuarios X e O para iniciar o jogo.');
-            return;
+        if(!jogadorX.nome || !jogadorO.nome){ //
+            alert('Favor informar os usuarios X e O para iniciar o jogo.'); //
+            return; //
         }
 
         // Alterar os nomes dos jogadores...
-        painel.nomeX.textContent = TEXTO_USUARIO_X + jogadorX.nome;
-        painel.nomeO.textContent = TEXTO_USUARIO_O + jogadorO.nome;
+        painel.nomeX.textContent = TEXTO_USUARIO_X + jogadorX.nome; //
+        painel.nomeO.textContent = TEXTO_USUARIO_O + jogadorO.nome; //
 
-        jogadorAtual = jogadorX;
-        painel.nomeProximoJogador.textContent = jogadorAtual.nome;
-        emJogo = true;
+        jogadorAtual = jogadorX; //
+        painel.nomeProximoJogador.textContent = jogadorAtual.nome; //
+        emJogo = true; //
 
         // Aqui tenho que esconder as opções e mostrar o painel.
-        opcoes.divOpcoesJogo.classList.add('esconder');
-        painel.painelOpcoesJogo.classList.remove('esconder');
+        opcoes.divOpcoesJogo.classList.add('esconder'); //
+        painel.painelOpcoesJogo.classList.remove('esconder'); //
     });
 
 
@@ -111,23 +117,25 @@
 
 
     // Funções utilizadas no jogo
-
+    
+    //Função de validar uma jogada
     function  validarJogada(){
-       let valor = jogadorAtual.valor;
-
+       let valor = jogadorAtual.valor; //
+        
+       //
        if(_estrategia_1(valor) ||
-          _estrategia_2(valor) || 
+          _estrategia_2(valor) ||
           _estrategia_3(valor) ||
           _estrategia_4(valor) ||
           _estrategia_5(valor) ||
           _estrategia_6(valor) ||
-          _estrategia_7(valor) ||
+          _estrategia_7(valor) || 
           _estrategia_8(valor)){
 
-            return true;
+            return true; //
         }
 
-        return false;      
+        return false; // 
     }
 
     function _estrategia_1(valor){
@@ -197,10 +205,13 @@
 
         painel.nomeProximoJogador.textContent = jogadorAtual.nome;
     }
-
+ 
+    //Função para reiniciar o jogo
     function _reiniciarJogo(){
 
-        jogadas = [];
+        jogadas = []; //
+
+        //
         jogo.jogada1.textContent = '';
         jogo.jogada2.textContent = '';
         jogo.jogada3.textContent = '';
@@ -212,18 +223,19 @@
         jogo.jogada9.textContent = '';
     }
 
+    //Função para o atualizarPainel
     function _atualizarPainel(){
 
-        jogadorAtual.pontos += 1;
+        jogadorAtual.pontos += 1; //
 
-        if(jogadorAtual.valor == "X"){
-            painel.pontosX.textContent = jogadorAtual.pontos;
-        }else{
-            painel.pontosO.textContent = jogadorAtual.pontos;
+        if(jogadorAtual.valor == "X"){ //
+            painel.pontosX.textContent = jogadorAtual.pontos; //
+        }else{ //
+            painel.pontosO.textContent = jogadorAtual.pontos; //
         }
-
-        jogadorAtual = (jogadorAtual == jogadorX) ? jogadorO : jogadorX;
-        painel.nomeProximoJogador.textContent = jogadorAtual.nome;
+        
+        jogadorAtual = (jogadorAtual == jogadorX) ? jogadorO : jogadorX; //
+        painel.nomeProximoJogador.textContent = jogadorAtual.nome; //
     }
  
 })()
