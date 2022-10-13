@@ -1,53 +1,82 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html> <!--É para informar a versão do Html no arquivo-->
+<html lang="pt-BR"> <!--Html é para iniciar um código do tipo html e lang é para definir o idioma-->
+<head> <!--é a parte que não é exibida no navegador da Web quando a página é carregada-->
+
+    <!--O Meta define qualquer informação de metadados (Dados de outros dados) que não podem ser definidos por outros elementos HTML, Charset indica o formato de codificação
+    definido por caracteres que foram utilizados em um documento e o UTF-8 (UCS Transformation Format 8) é a codificação de caracteres mais comum da World Wide Web. Cada caractere
+    é representado por um a quatro bytes. UTF-8 é compatível com versões anteriores do ASCII e pode representar qualquer caractere Unicode padrão-->
+
     <meta charset="UTF-8">
+    
+    <!--Meta tags com o atributo “name” são utilizadas quando os tipos não correspondem com o HTTP, ou seja, aquilo que não se adequar ao HTTP-EQUIV (O atributo HTTP-EQUIV serve para
+    controlar as ações do browser e também especificam melhor as informações, sendo que estas tem efeito equivalente quando são utilizadas diretamente na tag HTTP do cabeçalho) é utilizado no NAME-->
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joguinho da velhinha</title>
-    <link rel="stylesheet" href="./css/velha.css">
+
+    <title>Joguinho da velhinha</title> <!--Título é aonde vai aparecer lá em cima na parte superior da página-->
+
+    <link rel="stylesheet" href="./css/velha.css"> <!--Link que dentro dele vai conter uma relação de stylesheet(CSS) e também vai conter um href (ele especifica a localização do arquivo que você precisa criar um link)-->
 </head>
-<body>
 
-    <div class="container">
+<body> <!--É dentro desse body que vai conter todo o código-->
 
-        <header>
+    <div class="container"> <!--Div (div é posicionamento, é voltada para criar e modificar posições em um site) que vai conter uma classe chamada container-->
 
-            <div class="painel-opcoes esconder">
+        <header> <!--É como um cabeçalho do site-->
 
-                <div class="painel-group">
-                    <span id="painel-usuario-x-nome"></span>   
-                    <span class="pontos">Pontos: <strong id="painel-usuario-x-pontos">0</strong></span>
+            <div class="painel-opcoes esconder"> <!--Div que vai conter uma classe chamada painel-opcoes esconder-->
+
+                <div class="painel-group"> <!--Div que vai conter uma classe chamada painel-group-->
+
+                    <span id="painel-usuario-x-nome"></span> <!--Span que vai ter um id chamado painel-usuário-x-nome (é um conteiner generico em linha para conteúdo fraseado, Ele pode ser usado para agrupar elementos para fins de estilo
+                    usando os atributos class ou id, ou para compartilhar valores de atributos como lang)-->
+
+                    <span class="pontos">Pontos: <strong id="painel-usuario-x-pontos">0</strong></span> <!--Span que vai conter uma classe chamada pontos e está criando um strong (dá ao texto uma forte importância, e é tipicamente mostrado
+                    em negrito) e vai conter um id do painel-usuario-x-pontos também vai conter na tela escrito Pontos: 0 inicialmente-->
                 </div>
 
-                <div class="painel-group">
-                    <span id="painel-usuario-o-nome"></span>
-                    <span class="pontos"> Pontos: <strong id="painel-usuario-o-pontos">0</strong></span>
+                <div class="painel-group"> <!--Div que contém uma classe chamada painel-group-->
+
+                    <span id="painel-usuario-o-nome"></span> <!--Span que vai conter um id painel-usuario-o-nome-->
+
+                    <span class="pontos"> Pontos: <strong id="painel-usuario-o-pontos">0</strong></span> <!--Span que vai conter uma classe chamada pontos e está criando um strong que vai conter um id painel-usuaro-o-pontos também irá conter na tela Pontos: 0 inicialmente-->
                 </div>
 
-                <div class="proximo-jogar">
-                    <em><span>Próximo a jogar:</span> <strong id="proximo-jogador"></strong></em>
+                <div class="proximo-jogar"> <!--Div que contém uma classe chamada proximo-jogar-->
+
+                    <em><span>Próximo a jogar:</span> <strong id="proximo-jogador"></strong></em> <!--Em (marca o texto que tem ênfase) e dentro desse em vai conter um span e dentro desse span vai conter escrito Próximo a jogar: e também vai conter um strong que vai conter um id
+                     proximo-jogador-->
                 </div>
 
             </div>
 
-            <div class="opcoes-jogo">
+            <div class="opcoes-jogo"> <!--Div que vai conter uma classe chamada opcoes-jogo-->
                 
-                <div class="header-group">
-                    <label for="usuario-x">Usuario X</label>
-                    <input autocomplete="off" id="usuario-x" type="text">
+                <div class="header-group"> <!--Div que vai conter uma classe chamada header-group-->
+
+                    <label for="usuario-x">Usuario X</label> <!--Label (legenda) que contém for (É o atributo de entrada para qual o label se destina) usuario-x e irá conter escrito Usuario X-->
+
+                    <input autocomplete="off" id="usuario-x" type="text"> <!--Imput (é usado para criar controles interativos para formulários baseados na web para receber dados do usuário) que contém autocomplete (O navegador pode completar o valor
+                    automaticamente off o usuário deve inserir explicitamente on o navegador faz automático) e também irá conter um id usuario-x e por último o type (É o tipo do imput) que irá ser de texto-->
+
                 </div>
     
-                <div class="header-group">
-                    <label for="usuario-o">Usuario O</label>
-                    <input autocomplete="off" id="usuario-o" type="text">
+                <div class="header-group"> <!--Div que contém uma classe chamada header-group-->
+
+                    <label for="usuario-o">Usuario O</label> <!--Label que contém um for usuario-o e também tem escrito Usuario O-->
+
+                    <input autocomplete="off" id="usuario-o" type="text"> <!--Input que contém autocomplete off com id usuario-o do type text-->
+
                 </div>
 
-                <button id="btn-jogar">Jogar</button>
+                <button id="btn-jogar">Jogar</button> <!--Botão que contém um id btn-jogar e também está escrito jogar-->
    
             </div>
   
         </header>
         
+        <!--Várias divs que contém classe chamadas jogo-velha-1 até 9-->
+
         <div class="jogo-velha-1" ></div>
         <div class="jogo-velha-2" ></div>
         <div class="jogo-velha-3" ></div>
@@ -58,13 +87,14 @@
         <div class="jogo-velha-8" ></div>
         <div class="jogo-velha-9" ></div>
 
-        <footer> 
-            <em>
-                <h4>Desenvolvido por Weberson Rodrigues.</h4>
+        <footer> <!--Parte inferior do site-->
+
+            <em> 
+                <h4>Desenvolvido por Weberson Rodrigues.</h4><!--Está escrito como ênfase-->
             </em> 
         </footer>
     </div>
 
-    <script src="./js/velha.js"></script>
+    <script src=""></script> <!--Está importando um código javascript e dentro desse código vai conter um src (É tipo um endereço) que irá conter ./js/velha.js-->
 </body>
 </html>
