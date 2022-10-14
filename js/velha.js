@@ -6,13 +6,14 @@
     //Variáveis constantes (Não podem ser mudadas depois no durante o código)
     const TEXTO_USUARIO_X = 'Usuário X:  '; 
     const TEXTO_USUARIO_O = 'Usuário O:  ';
-
+    
+    //Variáveis declaradas com let não podem ser redeclaradas no mesmo local mas podem ser dentro de {} mas só ai depois disso ela volta a ter o seu valor de antes
     let jogadorAtual = {};
     let jogadas = [];
     let emJogo = false;
     let jogo = {
 
-        //
+        //Document.querySelector retorna o primeiro elemento dentro do documento (usando ordenação em profundidade, pré-ordenada e transversal dos nós do documento) que corresponde ao grupo especificado de seletores
         jogada1: document.querySelector('.jogo-velha-1'),
         jogada2: document.querySelector('.jogo-velha-2'),
         jogada3: document.querySelector('.jogo-velha-3'),
