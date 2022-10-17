@@ -13,14 +13,11 @@
     let emJogo = false; //emJogo é uma variável que irá receber valores do tipo true ou false (verdadeiro ou falso)
     let jogo = {
 
-<<<<<<< HEAD
         /*Document.querySelector retorna o primeiro elemento dentro do documento (usando ordenação em
         profundidade, pré-ordenada e transversal dos nós do documento) que corresponde ao grupo especificado de seletores*/
         jogada1: document.querySelector('.jogo-velha-1'), //Está pegando o primeiro elemento do .jogo-velha-1 e assim por diante
-=======
         //Document.querySelector retorna o primeiro elemento dentro do documento (usando ordenação em profundidade, pré-ordenada e transversal dos nós do documento) que corresponde ao grupo especificado de seletores
         jogada1: document.querySelector('.jogo-velha-1'),
->>>>>>> f47b0b96d1f85e4830f8cfb1b3d5bf4f9af79f5c
         jogada2: document.querySelector('.jogo-velha-2'),
         jogada3: document.querySelector('.jogo-velha-3'),
         jogada4: document.querySelector('.jogo-velha-4'),
