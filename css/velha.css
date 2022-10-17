@@ -1,5 +1,7 @@
+/*O CSS é focado para a parte gráfica da página então vai ter a margem, cor, altura e largura e muito mais coisas
 /* Aqui eu posso declarar variáveis. */
 :root{
+    /*Está declarando variáveis globais*/
     --color-primary:rgb(40,140,40); /*Cor primária verde*/
     --color-secundary:rgb(40,100,40); /*Cor secundária verde escuro*/
     --color-geral: #121214; /*Cor geral preto*/
@@ -8,58 +10,63 @@
 
 /* Aqui estou zerando o CSS do navegador */
 html, body {
-    margin: 0; /**/
-    padding: 0; /**/
-    width: 100%; /**/
-    height: 100%; /**/
-    box-sizing: border-box; /**/
+    margin: 0; /*A propriedade margin do CSS define a área de margem nos quatro lados do elemento.
+    É uma abreviação que define todas as margens individuais de uma só vez: margin-top, margin-right (en-US), margin-bottom, e margin-left (en-US)*/
+    padding: 0; /*Define uma a distância entre o conteúdo de um elemento e suas bordas*/
+    width: 100%; /*Largura*/
+    height: 100%; /*Altura*/
+    box-sizing: border-box; /*indica que o tamanho agora levará em conta até a borda -- ou seja, o width será a soma do conteúdo com a borda e o padding*/
 }
 
 /* meu container principal */
-.container {
-    display: grid; /**/
+
+.container { /*É aonde vai conter todos os objetos e propriedades*/
+    display: grid; /*O display é a tela e está dizendo que na tela vai ter grades*/
     grid-template-columns: 200px 200px 200px; /**/
     grid-template-rows: 20vh 20vh 20vh 20vh calc(20vh - 20px); /**/
     background-color: var(--color-geral); /**/
     color: var(--font-color); /**/
 
-    grid-template-areas:  "h  h  h" /**/
+    grid-template-areas:  "h  h  h" /*Isso é as colunas que vai ficar*/
                           "v1 v2 v3"
                           "v4 v5 v6"
                           "v7 v8 v9"
                           "f  f  f";
 
-    grid-gap:5px; /**/
-    justify-content: center; /**/
-    align-content: center; /**/
+    grid-gap:5px; /*O grid-gap é um atalho para declarar as duas propriedades em um só lugar.
+    Se você passar um único valor, os dois serão aplicados para o espaço para linhas e colunas.
+    Se passar dois valores, o primeiro será para linhas e o segundo para colunas*/
+    justify-content: center; /*A propriedade justify-content (en-US) é empregada para alinhar os
+    elementos ao longo do eixo principal, cuja direção( row ou column )é definida a partir da propriedade flex-direction*/
+    align-content: center; /*A propriedade align-content alinha as linhas de um container flex quando há espaço extra no eixo cruzado. Ou seja, não tem efeito algum dentro dos itens de uma única linha*/
 }
 
 header {
-    grid-area: h; /**/
-    display: grid; /**/
-    grid-gap: 5px; /**/
+    grid-area: h; /*É o cabeçalho tipo uma introdução*/
+    display: grid;
+    grid-gap: 5px;
     justify-content: start; /**/
-    align-content: center; /**/
-    margin-top: 6px; /**/
+    align-content: center;
+    margin-top: 6px; /*A margem do topo vai ser de 6px*/
 }
 
-footer{
-    grid-area: f; /**/
-    text-align: center; /**/
+footer{ /*É a parte de baixo de uma página no final dela*/
+    grid-area: f; /*Está dizendo que a area da grade que o footer vai ficar é o f*/
+    text-align: center; /*A propriedade text-align é usada para centralizar horizontalmente o texto na página.*/
 }
 
 .container > div {
-    background-color: var(--color-primary); /**/
-    display: grid; /**/
-    justify-content: center; /**/
-    align-content: center; /**/
+    background-color: var(--color-primary); /*background-color vai receber uma variável global --color-primary*/
+    display: grid;
+    justify-content: center;
+    align-content: center;
     border-radius: 10px; /**/
     font-size: 50px; /**/
     font-weight: 800; /**/
 }
 
 .container > div:hover{
-    background-color: var(--color-secundary); /**/
+    background-color: var(--color-secundary); /*background-color vai receber uma variável global --color-secundary*/
     cursor: pointer; /**/
 }
 
@@ -137,10 +144,10 @@ footer{
 }
 
 .proximo-jogar{
-    margin-top: 50px; /**/
+    margin-top: 50px;
 }
 
 .esconder{
-    display: none; /**/
+    display: none; /*Nada para mostrar na tela*/
 }
 
